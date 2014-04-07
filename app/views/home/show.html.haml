@@ -13,12 +13,7 @@
         %h1.cover-heading Hundred Best Days
         %p.lead 
           %form.form-signin{role: "form"}
-            %input.form-control{autofocus: "", placeholder: "Email address", required: "", type: "email"}/
-            %input.form-control{placeholder: "Password", required: "", type: "password"}/
-            %label.checkbox
-              %input{type: "checkbox", value: "remember-me"}/
-              Remember me
-            %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Sign in
+            %a.btn.btn-lg.btn-primary.btn-block{href: "/auth/facebook", id: "sign_in"} Sign in with Facebook
         -#%p.lead
           %a.btn.btn-lg.btn-default{href: "#"} Sign in
       .mastfoot
