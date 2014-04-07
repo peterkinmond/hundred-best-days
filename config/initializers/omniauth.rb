@@ -1,6 +1,5 @@
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  #TODO: Move app secret into ENV var
-  provider :facebook, '332511066900720', 'APP SECRET'
+  provider :facebook, '332511066900720', ENV["FACEBOOK_APP_SECRET"]
 end
