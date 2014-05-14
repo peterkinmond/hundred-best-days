@@ -1,0 +1,10 @@
+!!!
+%html(lang='en')
+  %head
+    %title Hundred Best Days
+    = stylesheet_link_tag    "not_signed_in", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
+  %body
+    = yield
