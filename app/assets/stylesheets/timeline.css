@@ -1,0 +1,15 @@
+.event-container {
+
+
+}
+
+ul.years {
+  margin-top: 25px;
+  list-style-type: none;
+}
+
+li.year {
+  height: 75px;
+  width: 75px;
+  border-top: 1px solid white;
+}
