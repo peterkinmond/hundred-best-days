@@ -10,6 +10,6 @@
                 %span= event.date.year
               .event_icon
               .event_body
-                %span= event.location 
+                %span= link_to event.location, event_path(event)
                 %h2= event.title 
                 %p= truncate(event.description, length: 400)
