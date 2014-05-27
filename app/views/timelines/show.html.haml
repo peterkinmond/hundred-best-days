@@ -1,14 +1,14 @@
 .container
   .row  
     .col-md-12
-      %section.timeline
-        %ul.cbp_tmtimeline
+      %section
+        %ul.timeline
           - @events.each do |event|
             %li
-              %time.cbp_tmtime{ datetime: event.date}
+              %time.time{ datetime: event.date}
                 %span= event.date.strftime("%b %d")
                 %span= event.date.year
-              .cbp_tmicon.cbp_tmicon-phone
-              .cbp_tmlabel
+              .event_icon
+              .event_body
                 %h2= event.title 
                 %p= event.title

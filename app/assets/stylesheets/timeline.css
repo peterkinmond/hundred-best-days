@@ -1,23 +1,10 @@
-/*
-ul.years {
-  margin-top: 25px;
-  list-style-type: none;
-}
-
-li.year {
-  height: 75px;
-  width: 75px;
-  border-top: 1px solid white;
-}
-*/
-
 /* Design adapted from: http://tympanus.net/codrops/2013/05/02/vertical-timeline/ */
 @font-face {
   font-weight: normal;
   font-style: normal;
 }
 
-.cbp_tmtimeline {
+.timeline {
   margin: 30px 0 0 0;
   padding: 0;
   list-style: none;
@@ -25,7 +12,7 @@ li.year {
 }
 
 /* The vertical line */
-.cbp_tmtimeline:before {
+.timeline:before {
   content: '';
   position: absolute;
   top: 0;
@@ -36,39 +23,39 @@ li.year {
   margin-left: -10px;
 }
 
-.cbp_tmtimeline > li {
+.timeline > li {
   position: relative;
 }
 
 /* The date/time */
-.cbp_tmtimeline > li .cbp_tmtime {
+.timeline > li .time {
   display: block;
   width: 25%;
   padding-right: 100px;
   position: absolute;
 }
 
-.cbp_tmtimeline > li .cbp_tmtime span {
+.timeline > li .time span {
   display: block;
   text-align: right;
 }
 
-.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+.timeline > li .time span:first-child {
   font-size: 0.9em;
   color: #bdd0db;
 }
 
-.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+.timeline > li .time span:last-child {
   font-size: 2.9em;
   color: #3594cb;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+.timeline > li:nth-child(odd) .time span:last-child {
   color: #6cbfee;
 }
 
 /* Right content */
-.cbp_tmtimeline > li .cbp_tmlabel {
+.timeline > li .event_body {
   margin: 0 0 15px 25%;
   background: #3594cb;
   color: #fff;
@@ -80,18 +67,18 @@ li.year {
   border-radius: 5px;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+.timeline > li:nth-child(odd) .event_body {
   background: #6cbfee;
 }
 
-.cbp_tmtimeline > li .cbp_tmlabel h2 {
+.timeline > li .event_body h2 {
   margin-top: 0px;
   padding: 0 0 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 /* The triangle */
-.cbp_tmtimeline > li .cbp_tmlabel:after {
+.timeline > li .event_body:after {
   right: 100%;
   border: solid transparent;
   content: " ";
@@ -104,14 +91,14 @@ li.year {
   top: 10px;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+.timeline > li:nth-child(odd) .event_body:after {
   border-right-color: #6cbfee;
 }
 
 
 
 /* The icons */
-.cbp_tmtimeline > li .cbp_tmicon {
+.timeline > li .event_icon {
   width: 40px;
   height: 40px;
   font-family: 'ecoico';
@@ -135,43 +122,41 @@ li.year {
 }
 
 /* TODO: Add icons that show privacy settings - private, group, and world */
-.cbp_tmicon-phone:before {
-  content: "\e000";
-}
+
 
 /* Media Queries */
 
 @media screen and (max-width: 65.375em) {
-  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+  .timeline > li .time span:last-child {
     font-size: 1.5em;
   }
 }
 
-@media screen and (max-width: 47.2em) {
-  .cbp_tmtimeline:before {
+@media screen and (max-width: 34.2em) {
+  .timeline:before {
     display: none;
   }
 
-  .cbp_tmtimeline > li .cbp_tmtime {
+  .timeline > li .time {
     width: 100%;
     position: relative;
     padding: 0 0 20px 0;
   }
 
 
-  .cbp_tmtimeline > li .cbp_tmtime span {
+  .timeline > li .time span {
     text-align: left;
   }
 
 
-  .cbp_tmtimeline > li .cbp_tmlabel {
+  .timeline > li .event_body {
     margin: 0 0 30px 0;
     padding: 1em;
     font-weight: 400;
     font-size: 95%;
   }
 
-  .cbp_tmtimeline > li .cbp_tmlabel:after {
+  .timeline > li .event_body:after {
     right: auto;
     left: 20px;
     border-right-color: transparent;
@@ -179,12 +164,12 @@ li.year {
     top: -20px;
   }
 
-  .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+  .timeline > li:nth-child(odd) .event_body:after {
     border-right-color: transparent;
     border-bottom-color: #6cbfee;
   }
 
-  .cbp_tmtimeline > li .cbp_tmicon {
+  .timeline > li .event_icon {
     position: relative;
     float: right;
     left: auto;
