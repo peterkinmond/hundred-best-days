@@ -5,6 +5,7 @@
 }
 
 .timeline {
+  text-align: left;
   margin: 30px 0 0 0;
   padding: 0;
   list-style: none;
@@ -50,10 +51,6 @@
   color: #3594cb;
 }
 
-.timeline > li:nth-child(odd) .time span:last-child {
-  color: #6cbfee;
-}
-
 /* Right content */
 .timeline > li .event_body {
   margin: 0 0 15px 25%;
@@ -65,10 +62,6 @@
   line-height: 1.4;
   position: relative;
   border-radius: 5px;
-}
-
-.timeline > li:nth-child(odd) .event_body {
-  background: #6cbfee;
 }
 
 .timeline > li .event_body h2 {
@@ -90,11 +83,6 @@
   border-width: 10px;
   top: 10px;
 }
-
-.timeline > li:nth-child(odd) .event_body:after {
-  border-right-color: #6cbfee;
-}
-
 
 
 /* The icons */
@@ -162,11 +150,6 @@
     border-right-color: transparent;
     border-bottom-color: #3594cb;
     top: -20px;
-  }
-
-  .timeline > li:nth-child(odd) .event_body:after {
-    border-right-color: transparent;
-    border-bottom-color: #6cbfee;
   }
 
   .timeline > li .event_icon {
