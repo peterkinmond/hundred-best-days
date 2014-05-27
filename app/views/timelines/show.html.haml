@@ -2,14 +2,13 @@
   .row  
     .col-md-12
       %section.timeline
-        %ul.years
-          - @years.each do |year|
-            %li.year
-              %time
-                = year
-              -#- @events.each do |event|
-                -#.event-container
-                  -#.event-header
-                    -#= event.date
-                  -#.event-body
-                    -#= event.title
+        %ul.cbp_tmtimeline
+          - @events.each do |event|
+            %li
+              %time.cbp_tmtime{ datetime: event.date}
+                %span= event.date.strftime("%b %d")
+                %span= event.date.year
+              .cbp_tmicon.cbp_tmicon-phone
+              .cbp_tmlabel
+                %h2= event.title 
+                %p= event.title
