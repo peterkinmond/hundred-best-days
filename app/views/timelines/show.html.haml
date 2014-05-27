@@ -11,4 +11,4 @@
               .event_icon
               .event_body
                 %h2= event.title 
-                %p= event.title
+                %p= truncate(event.description, length: 400)
