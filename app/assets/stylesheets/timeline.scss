@@ -2,6 +2,7 @@
 
 $date-colour: #bdd0db;
 $node-background-colour: #3594cb;
+$node-background-colour-hover: #068DDB;
 $vertical-line-colour: #afdcf8;
 $icon-background-colour: #46a4da;
 $text-colour: #fff;
@@ -32,6 +33,10 @@ $text-colour: #fff;
 
   & > li {
     position: relative;
+
+    a:hover {
+      text-decoration: none;
+    }
 
     /* The date/time */
     .time {
@@ -67,6 +72,10 @@ $text-colour: #fff;
       line-height: 1.4;
       position: relative;
       border-radius: 5px;
+
+      &:hover {
+        background: $node-background-colour-hover;
+      }
 
       h2 {
         margin-top: 0px;
