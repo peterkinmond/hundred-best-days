@@ -1,4 +1,11 @@
 /* Design adapted from: http://tympanus.net/codrops/2013/05/02/vertical-timeline/ */
+
+$date-colour: #bdd0db;
+$node-background-colour: #3594cb;
+$vertical-line-colour: #afdcf8;
+$icon-background-colour: #46a4da;
+$text-colour: #fff;
+
 @font-face {
   font-weight: normal;
   font-style: normal;
@@ -18,7 +25,7 @@
     top: 0;
     bottom: 0;
     width: 10px;
-    background: #afdcf8;
+    background: $vertical-line-colour;
     left: 20%;
     margin-left: -10px;
   }
@@ -39,12 +46,12 @@
 
         &:first-child {
           font-size: 0.9em;
-          color: #bdd0db;
+          color: $date-colour;
         }
 
         &:last-child {
           font-size: 2.9em;
-          color: #3594cb;
+          color: $node-background-colour;
         }
       }
     }
@@ -52,8 +59,8 @@
     /* Right content */
     .event_body {
       margin: 0 0 15px 25%;
-      background: #3594cb;
-      color: #fff;
+      background: $node-background-colour;
+      color: $text-colour;
       padding: 2em;
       font-size: 1.2em;
       font-weight: 300;
@@ -76,7 +83,7 @@
         width: 0;
         position: absolute;
         pointer-events: none;
-        border-right-color: #3594cb;
+        border-right-color: $node-background-colour;
         border-width: 10px;
         top: 10px;
       }
@@ -96,10 +103,9 @@
       line-height: 40px;
       -webkit-font-smoothing: antialiased;
       position: absolute;
-      color: #fff;
-      background: #46a4da;
+      background: $icon-background-colour; 
       border-radius: 50%;
-      box-shadow: 0 0 0 8px #afdcf8;
+      box-shadow: 0 0 0 8px $vertical-line-colour;
       text-align: center;
       left: 20%;
       top: 0;
@@ -145,7 +151,7 @@
           right: auto;
           left: 20px;
           border-right-color: transparent;
-          border-bottom-color: #3594cb;
+          border-bottom-color: $node-background-colour;
           top: -20px;
         }
       }
