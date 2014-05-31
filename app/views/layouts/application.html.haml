@@ -7,7 +7,7 @@
     = csrf_meta_tags
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation"}
+    %nav.navbar.navbar-default.navbar-static-top{ role: "navigation"}
       .container
         .navbar-header
           %button.navbar-toggle
@@ -17,6 +17,8 @@
             %ul.nav.navbar-nav
               %li
                 = link_to "Timeline", timeline_path
+              %li.avatar
+                = image_tag(current_user.image)
               %li.navbar-text
                 %strong= current_user.name
             %p.navbar-text.navbar-right

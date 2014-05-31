@@ -13,6 +13,8 @@
  *= require_self
  */
 
-body {
-  padding-top: 60px;
+.avatar img {
+  border-radius: 50%;
+  height: 42px;
+  margin: 5px -10px 0 15px;
 }
