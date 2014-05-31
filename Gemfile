@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.1'
 gem 'haml-rails', '~> 0.5.3'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
 
@@ -39,6 +39,7 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'shoulda-matchers', '~>2.4'
+  gem 'awesome_print', :require => 'ap'
 end
 
 # Use ActiveModel has_secure_password
