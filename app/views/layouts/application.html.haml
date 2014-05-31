@@ -7,11 +7,19 @@
     = csrf_meta_tags
     %meta{ name: "viewport", content: "width=device-width, initial-scale=1" }
   %body
-    #user-widget
-      - if current_user
-        Welcome
-        = succeed "!" do
-          %strong= current_user.name
-        = link_to "Sign out", signout_path, id: "sign_out"
+    %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle
+          %a.navbar-brand{ href: "#"} 100 Best Days
+        .collapse.navbar-collapse
+          - if current_user
+            %ul.nav.navbar-nav
+              %li
+                = link_to "Timeline", timeline_path
+              %li.navbar-text
+                %strong= current_user.name
+            %p.navbar-text.navbar-right
+              = link_to "Sign out", signout_path, id: "sign_out"
         
     = yield
