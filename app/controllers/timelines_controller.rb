@@ -1,5 +1,5 @@
 class TimelinesController < ApplicationController
   def show
-    @events = Event.all.sort_by(&:date)
+    @events = current_user.events.sort_by(&:date)
   end
 end
