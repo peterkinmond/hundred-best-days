@@ -3,9 +3,17 @@
     .col-md-12
       %section
         %ul.timeline
+          %li.new_event
+            %a{href: new_event_path}
+              %time.time
+                %span Some
+                %span Time
+              .event_icon
+              .event_body
+                %h2 New Event
           - @events.each do |event|
             %li
-              %a{href:event_path(event)}
+              %a{href: event_path(event)}
                 %time.time{ datetime: event.date}
                   %span= event.date.strftime("%b %d")
                   %span= event.date.year
