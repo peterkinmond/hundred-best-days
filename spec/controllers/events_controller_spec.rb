@@ -10,4 +10,11 @@ describe EventsController do
       expect(assigns(:event)).to eq(event)
     end
   end
+
+  describe 'GET new' do
+    it 'works' do
+      get 'new'
+      expect(response).to be_success
+    end
+  end
 end
