@@ -2,8 +2,12 @@ require 'spec_helper'
 
 describe EventsController do
   describe 'GET show' do
-    it 'breaks' do
-      expect(1).to eq(1)
+    let!(:user) { User.create!(name: 'Test User') }
+    let!(:event) { Event.create!(user: user, title: 'Fake event') }
+
+    it 'sets event to chosen event' do
+      get 'show', id: event.id
+      expect(assigns(:event)).to eq(event)
     end
   end
 end
