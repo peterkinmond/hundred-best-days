@@ -1,11 +1,15 @@
 require 'spec_helper'
 
 describe EventsController do
+  let!(:user) { User.create!(name: 'Test User') }
+
   def valid_params
     {
       title: 'My Event Title',
       location: 'My Event Location',
-      description: 'My Event Description'
+      description: 'My Event Description',
+      date: 'My Event Date',
+      user_id: user.id
     }
   end
 
@@ -16,7 +20,6 @@ describe EventsController do
   end
 
   describe 'GET show' do
-    let!(:user) { User.create!(name: 'Test User') }
     let!(:event) { Event.create!(user: user, title: 'Fake event') }
 
     it 'sets event to chosen event' do
