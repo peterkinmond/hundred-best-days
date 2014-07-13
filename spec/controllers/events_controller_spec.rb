@@ -42,10 +42,15 @@ describe EventsController do
     end
 
     describe 'when params are NOT valid' do
-      xit 'stays on new form' do
+      it "doesn't create a new event" do
         expect {
           post 'create', {:event => invalid_params }
         }.to change(Event, :count).by(0)
+      end
+
+      it 'stays on new form' do
+        post 'create', {:event => invalid_params }
+        expect(response).to render_template('new')
       end
     end
   end
