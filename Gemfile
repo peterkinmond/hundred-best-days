@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.1'
 gem 'haml-rails', '~> 0.5.3'
 gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+gem 'simple_form', '3.1.0.rc1'
 
 gem 'mysql2', '~> 0.3.11'
 
