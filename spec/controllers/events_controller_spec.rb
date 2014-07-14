@@ -8,7 +8,7 @@ describe EventsController do
       title: 'My Event Title',
       location: 'My Event Location',
       description: 'My Event Description',
-      date: 'My Event Date',
+      date: Date.today,
       user_id: user.id
     }
   end
@@ -20,7 +20,7 @@ describe EventsController do
   end
 
   describe 'GET show' do
-    let!(:event) { Event.create!(user: user, title: 'Fake event') }
+    let!(:event) { Event.create!(valid_params) }
 
     it 'sets event to chosen event' do
       get 'show', id: event.id
@@ -55,6 +55,21 @@ describe EventsController do
         post 'create', {:event => invalid_params }
         expect(response).to render_template('new')
       end
+    end
+  end
+
+  describe 'DELETE destroy' do
+    let!(:event) { Event.create!(valid_params) }
+
+    it 'deletes the event' do
+      expect {
+        delete :destroy, { :id => event.id }
+      }.to change(Event, :count).by(-1)
+    end
+
+    it 'redirect to the timeline page' do
+      delete :destroy, { :id => event.id }
+      expect(response).to redirect_to(timeline_path)
     end
   end
 end

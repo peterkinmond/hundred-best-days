@@ -4,3 +4,6 @@
       %h3= "#{@event.location} - #{@event.date.strftime("%b %d %Y")}"
       %h1= @event.title
       %p= @event.description
+  .row
+    .col-md-offset-2.col-md-8
+      = button_to "Delete", event_path(@event), method: :delete, confirm: 'Delete this event?', class: 'btn btn-danger'

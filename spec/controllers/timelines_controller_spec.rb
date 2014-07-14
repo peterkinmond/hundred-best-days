@@ -1,9 +1,20 @@
 require 'spec_helper'
 
 describe TimelinesController do
+  let!(:user) { User.create!(name: 'Test User') }
+
+  def valid_params
+    {
+      title: 'My Event Title',
+      location: 'My Event Location',
+      description: 'My Event Description',
+      date: Date.today,
+      user_id: user.id
+    }
+  end
+
   describe 'GET show' do
-    let!(:user) { User.create!(name: 'Test User') }
-    let!(:event) { Event.create!(user: user, title: 'Fake event') }
+    let!(:event) { Event.create!(valid_params) }
 
     it "works" do
       allow(controller).to receive(:current_user).and_return(user)

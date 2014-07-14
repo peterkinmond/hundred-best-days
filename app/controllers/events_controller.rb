@@ -17,6 +17,11 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    Event.find(params[:id]).destroy
+    redirect_to timeline_path
+  end
+
   private
 
   def event_params
